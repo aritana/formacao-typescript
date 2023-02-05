@@ -4,7 +4,6 @@ export class Negociacao {
         this.quantidade = quantidade;
         this.valor = valor;
     }
-    //as propriedades são publicas, ou seja, getters, mas readonly
     get volume() {
         return this.quantidade * this.valor;
     }

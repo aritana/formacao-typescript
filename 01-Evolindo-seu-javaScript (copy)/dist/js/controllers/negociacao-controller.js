@@ -6,9 +6,10 @@ import { NegociacoesView } from "../views/negociacoes-view.js";
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        this.negociacoesView = new NegociacoesView("#negociacoesView", true); //passagem de seletor para inserir tabela
+        this.negociacoesView = new NegociacoesView("#negociacoesView", true);
         this.mensagemView = new MensagemView("#mensagemView");
-        this.inputData = document.querySelector("#data");
+        this.inputData = document.querySelector("#dataX");
+        console.log(this.inputData);
         this.inputQuantidade = document.querySelector("#quantidade");
         this.inputValor = document.querySelector("#valor");
         this.negociacoesView.update(this.negociacoes);

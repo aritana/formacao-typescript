@@ -13,13 +13,16 @@ export class NegociacaoController {
   private mensagemView = new MensagemView("#mensagemView");
 
   constructor() {
-    this.inputData = document.querySelector("#data");
-    this.inputQuantidade = document.querySelector("#quantidade");
-    this.inputValor = document.querySelector("#valor");
+    this.inputData = <HTMLInputElement>document.querySelector("#data");   //casting para garantir um valo não nulo apos mudar tsconfig.json
+    this.inputQuantidade = document.querySelector("#quantidade")as HTMLInputElement;//casting para garantir um valo não nulo
+    this.inputValor = document.querySelector("#valor")as HTMLInputElement;
     this.negociacoesView.update(this.negociacoes);
   }
 
   public adiciona(): void {
+    /**
+     * Aritana, vc já viu isso?
+     */
     const negociacao = Negociacao.criaDe(
       this.inputData.value,
       this.inputQuantidade.value,
